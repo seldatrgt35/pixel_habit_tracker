@@ -1,0 +1,8 @@
+node_modules
+dist
+.expo
+coverage
+package-lock.json
+apps/api/src/generated
+*.png
+*.ttf

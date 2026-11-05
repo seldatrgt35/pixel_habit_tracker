@@ -1,0 +1,42 @@
+{
+  "name": "little-by-little",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": "^24.15.0 || >=26.0.0",
+    "npm": ">=10.9"
+  },
+  "scripts": {
+    "dev:mobile": "npm run build -w @little/shared-types && npm run start -w @little/mobile",
+    "dev:web": "npm run build -w @little/shared-types && npm run web -w @little/mobile",
+    "dev:api": "npm run build -w @little/shared-types && npm run dev -w @little/api",
+    "build:api": "npm run build -w @little/shared-types && npm run db:generate && npm run build -w @little/api",
+    "build:web": "npm run build -w @little/shared-types && npm run export:web -w @little/mobile",
+    "preview:web": "node scripts/preview-web.mjs",
+    "db:generate": "npm run db:generate -w @little/api",
+    "db:migrate": "npm run db:migrate -w @little/api",
+    "typecheck": "npm run build -w @little/shared-types && npm run typecheck --workspaces --if-present",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run && npm run test -w @little/mobile",
+    "test:api": "npm run build:api && node scripts/smoke-api.mjs",
+    "test:integration": "node scripts/test-database.mjs",
+    "check": "npm run db:generate && npm run typecheck && npm run lint && npm run format:check && npm test && npm run test:api"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.6.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^4.0.0"
+  }
+}

@@ -1,0 +1,5 @@
+### Liveness
+GET http://localhost:3000/v1/health/live
+
+### Database readiness (503 until DATABASE_URL points to a reachable migrated database)
+GET http://localhost:3000/v1/health/ready

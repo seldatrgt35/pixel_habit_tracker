@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.expo/
+coverage/
+.env
+.env.*
+!.env.example
+apps/api/src/generated/
+*.log
+.DS_Store
+test-results/
+playwright-report/

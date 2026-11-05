@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Little by Little",
+    "slug": "little-by-little",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "littlebylittle",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#EAF1DF",
+        "foregroundImage": "./assets/icon.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "name": "Little by Little",
+      "description": "Small habits. Room to grow."
+    },
+    "plugins": ["expo-router", "expo-font"]
+  }
+}
